@@ -1,0 +1,12 @@
+@import './global.scss';
+
+.hero-section {
+    background-color: var(--primary-color-dark);
+}
+
+.card {
+    width: 360px;
+    img {
+        // width: 360px;
+    }
+}
