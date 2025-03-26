@@ -1,12 +1,82 @@
 @import './global.scss';
 
 .hero-section {
+    color: #F8F9FA;
     background-color: var(--primary-color-dark);
+}
+.hero-content {
+    padding-top: 40px;
+}
+.hero-title {
+    font-family: 'Markazi Text' !important;
+    color: var(--primary-color-light);
+}
+.hero-sub-title {
+    
+}
+.hero-text-content {
+    margin-top: 30px;
+}
+
+.hero-img {
+    width: auto;
+    height: 400px;
+    margin-bottom: -40px !important;
 }
 
 .card {
     width: 360px;
+    border-radius: 20px !important;
     img {
+        border-top-left-radius: 20px !important;
+        border-top-right-radius: 20px !important;
         // width: 360px;
+    }
+    margin-bottom: 20px;
+}
+
+.highlights-and-specials {
+    margin-top: 60px;
+}
+
+.highlights-header {
+    margin-bottom: 30px;
+}
+
+.highlights-card {
+    border: none !important;
+    background-color: var(--secondary-color-3) !important;
+    img {
+        height: 180px;
+        object-fit: cover;
+    }
+    h5 {
+        font-family: 'Markazi Text' !important;
+        font-weight: bold;
+    }
+    .card-price {
+        font-family: 'Markazi Text' !important;
+        color: var(--secondary-color-1);
+        font-weight: bold;
+    }
+
+    .order-delivery {
+        font-weight: bolder;
+        margin-top: auto; /* Pushes button to the bottom */
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .hero-img {
+        height: 200px;
+        margin-bottom: 0;
+        align-self: center;
+    }
+
+    .hero-content {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        // padding-left: 20px;
     }
 }
