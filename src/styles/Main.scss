@@ -1,5 +1,9 @@
 @import './global.scss';
 
+.main-container {
+    padding-bottom: 80px;
+}
+
 .hero-section {
     color: #F8F9FA;
     background-color: var(--primary-color-dark);
@@ -16,17 +20,21 @@
 }
 .hero-text-content {
     margin-top: 30px;
+    max-width: 60ch; /* Wraps after ~30 characters */
+    overflow-wrap: break-word;
 }
 
 .hero-img {
     width: auto;
     height: 400px;
     margin-bottom: -40px !important;
+    box-shadow: 1px 1px 2px var(--primary-color-light);
 }
 
 .card {
     width: 360px;
     border-radius: 20px !important;
+    box-shadow: 1px 1px 2px var(--primary-color-dark);
     img {
         border-top-left-radius: 20px !important;
         border-top-right-radius: 20px !important;
@@ -36,7 +44,7 @@
 }
 
 .highlights-and-specials {
-    margin-top: 60px;
+    margin-top: 80px;
 }
 
 .highlights-header {
