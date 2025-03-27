@@ -4,21 +4,21 @@ import logo from "../assets/Logo.svg";
 export default function Footer() {
   return (
     <footer className="footer-container d-flex justify-content-around">
-      <img src={logo} alt="logo" />
+      <img className="" src={logo} alt="logo" height="50px"/>
       <div className="column d-flex flex-column">
         <span>Doormat Navigation</span>
-        <small>Home</small>
-        <small>About</small>
-        <small>menu</small>
-        <small>Reservations</small>
-        <small>Order Online</small>
-        <small>Login</small>
+        <small role="button">Home</small>
+        <small role="button">About</small>
+        <small role="button">menu</small>
+        <small role="button">Reservations</small>
+        <small role="button">Order Online</small>
+        <small role="button">Login</small>
       </div>
       <div className="column d-flex flex-column">
         <span>Doormat Navigation</span>
-        <small>Adress</small>
-        <small>phone number</small>
-        <small>email</small>
+        <small role="button">Adress</small>
+        <small role="button">phone number</small>
+        <small role="button">email</small>
       </div>
       {/* <div className="test"></div> */}
     </footer>

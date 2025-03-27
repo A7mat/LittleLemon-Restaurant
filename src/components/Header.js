@@ -9,7 +9,7 @@ function Header() {
     <header className="d-flex justify-content-around">
       <nav className="navbar w-100 navbar-expand-md navbar-light bg-light">
         <div className="container-fluid">
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" height="50px"/>
           {/* <a className="navbar-brand" href="#">Navbar</a> */}
           <div>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
