@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import restaurantfood from "../../assets/restauranfood.jpg";
 
 const HeroSection = () => {
@@ -11,7 +12,7 @@ const HeroSection = () => {
               We are a family owned Mediterranean restaurant, focused on
               traditional recipes served with a modern twist.
             </p>
-            <button className="btn btn-warning">Reserve a Table</button>
+            <button className="booking-btn btn btn-warning"><NavLink to="/booking">Reserve a Table</NavLink></button>
           </div>
           <img className="hero-img rounded" src={restaurantfood} alt=""></img>
         </div>

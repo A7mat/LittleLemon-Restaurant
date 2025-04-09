@@ -1,6 +1,6 @@
 import "../styles/Main.scss";
-import HeroSection from "./Main/HeroSection";
-import HighlightSection from "./Main/HighlightSection";
+import HeroSection from "../components/Main/HeroSection";
+import HighlightSection from "../components/Main/HighlightSection";
 
 const Main = () => {
   

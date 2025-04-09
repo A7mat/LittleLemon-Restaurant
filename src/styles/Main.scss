@@ -23,7 +23,12 @@
     max-width: 60ch; /* Wraps after ~30 characters */
     overflow-wrap: break-word;
 }
-
+.booking-btn {
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
 .hero-img {
     width: auto;
     height: 400px;
