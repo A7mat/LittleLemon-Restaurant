@@ -3,8 +3,8 @@ import restaurantfood from "../../assets/restauranfood.jpg";
 
 const HeroSection = () => {
     return (
-        <section className="hero-section flex green-background">
-        <div className="hero-content container d-flex justify-content-between g-5">
+        <section className="hero-section flex green-background ">
+        <div className="hero-content _max_width container d-flex justify-content-between g-5">
           <div className="text-block">
             <h1 className="hero-title">Little Lemon</h1>
             <h2 className="hero-sub-title">Chicago</h2>

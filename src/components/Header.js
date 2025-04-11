@@ -1,13 +1,13 @@
 import logo from '../assets/Logo.svg';
-import NavLink from 'react-router-dom'
+import NavLink from 'react-router-dom';
 
 function Header() {
 
   const navItems = ['home', 'about', 'menu', 'reservations', 'order online', 'login']
 
   return (
-    <header className="d-flex justify-content-around">
-      <nav className="navbar w-100 navbar-expand-md navbar-light bg-light">
+    <header className="d-flex w-100 bg-light">
+      <nav className="navbar navbar-expand-md navbar-light _max_width">
         <div className="container-fluid">
           <img src={logo} alt="logo" height="50px"/>
           {/* <a className="navbar-brand" href="#">Navbar</a> */}

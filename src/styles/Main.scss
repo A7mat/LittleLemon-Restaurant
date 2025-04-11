@@ -49,7 +49,7 @@
 }
 
 .highlights-and-specials {
-    margin-top: 80px;
+    margin-top: 120px;
 }
 
 .highlights-header {
@@ -59,6 +59,7 @@
 .highlights-card {
     border: none !important;
     background-color: var(--secondary-color-3) !important;
+    max-width: 300px;
     img {
         height: 180px;
         object-fit: cover;
