@@ -1,6 +1,8 @@
 import "../styles/Main.scss";
 import HeroSection from "../components/Main/HeroSection";
 import HighlightSection from "../components/Main/HighlightSection";
+import AboutSection from "../components/Main/About";
+import TestimonialsSection from "../components/Main/Testimonials";
 
 const Main = () => {
   
@@ -8,6 +10,8 @@ const Main = () => {
     <main className="main-container">
       <HeroSection/>
       <HighlightSection/>
+      <TestimonialsSection/>
+      <AboutSection/>
 
       {/* <section className="testimonials">
         <div className="testimonial">testimonial1</div>
