@@ -1,11 +1,11 @@
 import "../styles/Footer.scss";
-import logo from "../assets/Logo.svg";
+import logo from "../assets/footer_Logo.png";
 
 export default function Footer() {
   return (
     <footer className="footer-container">
       <div className="_max_width d-flex justify-content-around">
-        <img className="" src={logo} alt="logo" height="50px"/>
+        <img className="" src={logo} alt="logo" height="170px"/>
         <div className="column d-flex flex-column">
           <span>Doormat Navigation</span>
           <small role="button">Home</small>

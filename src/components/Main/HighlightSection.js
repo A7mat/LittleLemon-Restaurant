@@ -25,7 +25,7 @@ const HighlightSection = () => {
       ]
 
     return (
-        <section className="highlights-and-specials container">
+      <section className="highlights-and-specials container">
         <div className="highlights-header d-flex justify-content-between">
           <h1>This week's specials!</h1>
           <span className="align-self-center">

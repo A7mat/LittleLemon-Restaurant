@@ -10,16 +10,8 @@ const Main = () => {
     <main className="main-container">
       <HeroSection/>
       <HighlightSection/>
-      <TestimonialsSection/>
+      {/* <TestimonialsSection/> */}
       <AboutSection/>
-
-      {/* <section className="testimonials">
-        <div className="testimonial">testimonial1</div>
-        <div className="testimonial">testimonial2</div>
-        <div className="testimonial">testimonial3</div>
-        <div className="testimonial">testimonial4</div>
-      </section>
-      <section className="about"></section> */}
     </main>
   );
 };
