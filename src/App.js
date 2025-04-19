@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout.js';
 import Main from './pages/Main.js';
-import BookingView from './pages/BookingView.js';
+import Bookings from './pages/bookings/index.js';
+import ConfirmedBooking from './pages/bookings/ConfirmedBooking.js';
 import { useEffect, useState } from 'react';
 import './styles/App.scss';
 
@@ -32,10 +33,16 @@ function App() {
           <Route
             path="/booking"
             element={
-              <BookingView
+              <Bookings
                 availableTimes={availableTimes}
                 setSelectedDate={setSelectedDate}
               />
+            }
+          />
+          <Route
+            path="/confirmed-booking"
+            element={
+              <ConfirmedBooking/>
             }
           />
         </Routes>
