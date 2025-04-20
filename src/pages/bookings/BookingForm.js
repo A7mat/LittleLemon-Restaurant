@@ -7,49 +7,62 @@ const BookingForm = ({ availableTimes, dispatchOnDateChange, submitData }) => {
   const maximumNumberOfGuests = 10;
   const occasions = ["Birthday", "Anniversary"];
 
-  // Error messages
   const invalidDateErrorMessage = "Please choose a valid date";
   const invalidTimeErrorMessage = "Please choose a valid time";
   const invalidOccasionErrorMessage = "Please choose a valid occasion";
-  const invalidNumberOfGuestsErrorMessage =
-    "Please enter a number between 1 and 12";
+  const invalidNumberOfGuestsErrorMessage = "Please enter a number between 1 and 10";
   const invalidFirstNameErrorMessage = "First name is required";
   const invalidLastNameErrorMessage = "Last name is required";
   const invalidEmailErrorMessage = "Enter a valid email address";
-  const invalidMobileErrorMessage = "Enter a valid 10-digit mobile number";
+  const invalidMobileErrorMessage = "Enter a valid 12-digit mobile number";
 
-  // Field values
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [mobile, setMobile] = useState("");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [numberOfGuests, setNumberGuests] = useState("");
-  const [occasion, setOccasion] = useState("");
+  // Single state object for form fields
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    mobile: "",
+    date: "",
+    time: "",
+    numberOfGuests: "",
+    occasion: ""
+  });
 
-  // Touched states
-  const [firstNameTouched, setFirstNameTouched] = useState(false);
-  const [lastNameTouched, setLastNameTouched] = useState(false);
-  const [emailTouched, setEmailTouched] = useState(false);
-  const [mobileTouched, setMobileTouched] = useState(false);
-  const [dateTouched, setDateTouched] = useState(false);
-  const [timeTouched, setTimeTouched] = useState(false);
-  const [guestsTouched, setGuestsTouched] = useState(false);
-  const [occasionTouched, setOccasionTouched] = useState(false);
+  const [touchedFields, setTouchedFields] = useState({
+    firstName: false,
+    lastName: false,
+    email: false,
+    mobile: false,
+    date: false,
+    time: false,
+    numberOfGuests: false,
+    occasion: false
+  });
 
-  // Validation
-  const isFirstNameValid = () => firstName.trim().length > 0;
-  const isLastNameValid = () => lastName.trim().length > 0;
-  const isEmailValid = () => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  const isMobileValid = () => /^[0-9]{12}$/.test(mobile);
-  const isDateValid = () => date !== "";
-  const isTimeValid = () => time !== "";
+  const handleChange = (field, value) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleBlur = (field) => {
+    setTouchedFields((prev) => ({ ...prev, [field]: true }));
+  };
+
+  const handleDateChange = (e) => {
+    handleChange("date", e.target.value);
+    dispatchOnDateChange(e.target.value);
+  };
+
+  const isFirstNameValid = () => formData.firstName.trim().length > 0;
+  const isLastNameValid = () => formData.lastName.trim().length > 0;
+  const isEmailValid = () => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
+  const isMobileValid = () => /^[0-9]{12}$/.test(formData.mobile);
+  const isDateValid = () => formData.date !== "";
+  const isTimeValid = () => formData.time !== "";
   const isNumberOfGuestsValid = () =>
-    numberOfGuests !== "" &&
-    numberOfGuests >= minimumNumberOfGuests &&
-    numberOfGuests <= maximumNumberOfGuests;
-  const isOccasionValid = () => occasion !== "";
+    formData.numberOfGuests !== "" &&
+    formData.numberOfGuests >= minimumNumberOfGuests &&
+    formData.numberOfGuests <= maximumNumberOfGuests;
+  const isOccasionValid = () => formData.occasion !== "";
 
   const areAllFieldsValid = () =>
     isFirstNameValid() &&
@@ -61,125 +74,92 @@ const BookingForm = ({ availableTimes, dispatchOnDateChange, submitData }) => {
     isNumberOfGuestsValid() &&
     isOccasionValid();
 
-  const handleDateChange = (e) => {
-    setDate(e.target.value);
-    dispatchOnDateChange(e.target.value);
-  };
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (areAllFieldsValid()) {
-      submitData({
-        firstName,
-        lastName,
-        email,
-        mobile,
-        date,
-        time,
-        numberOfGuests,
-        occasion,
-      });
+      submitData(formData);
     }
   };
 
   const Required = () => <span style={{ color: "red" }}>*</span>;
 
   return (
-    <form className="booking-form" onSubmit={handleFormSubmit}>
+    <form onSubmit={handleFormSubmit}>
       <h2>Table reservation</h2>
+
       <FormField
-        label={
-          <>
-            <span>First Name</span> <Required />
-          </>
-        }
+        label={<><span>First Name</span> <Required /></>}
         htmlFor='first-name'
-        hasError={firstNameTouched && !isFirstNameValid()}
+        hasError={touchedFields.firstName && !isFirstNameValid()}
         errorMessage={invalidFirstNameErrorMessage}
       >
         <input
           type='text'
           id='first-name'
           name='first-name'
-          value={firstName}
+          value={formData.firstName}
           required
-          onChange={(e) => setFirstName(e.target.value)}
-          onBlur={() => setFirstNameTouched(true)}
+          onChange={(e) => handleChange("firstName", e.target.value)}
+          onBlur={() => handleBlur("firstName")}
         />
       </FormField>
 
       <FormField
-        label={
-          <>
-            <span>Last Name</span> <Required />
-          </>
-        }
+        label={<><span>Last Name</span> <Required /></>}
         htmlFor='last-name'
-        hasError={lastNameTouched && !isLastNameValid()}
+        hasError={touchedFields.lastName && !isLastNameValid()}
         errorMessage={invalidLastNameErrorMessage}
       >
         <input
           type='text'
           id='last-name'
           name='last-name'
-          value={lastName}
+          value={formData.lastName}
           required
-          onChange={(e) => setLastName(e.target.value)}
-          onBlur={() => setLastNameTouched(true)}
+          onChange={(e) => handleChange("lastName", e.target.value)}
+          onBlur={() => handleBlur("lastName")}
         />
       </FormField>
 
       <FormField
-        label={
-          <>
-            <span>Email</span> <Required />
-          </>
-        }
+        label={<><span>Email</span> <Required /></>}
         htmlFor='email'
-        hasError={emailTouched && !isEmailValid()}
+        hasError={touchedFields.email && !isEmailValid()}
         errorMessage={invalidEmailErrorMessage}
       >
         <input
           type='email'
           id='email'
           name='email'
-          value={email}
+          value={formData.email}
           required
-          onChange={(e) => setEmail(e.target.value)}
-          onBlur={() => setEmailTouched(true)}
+          onChange={(e) => handleChange("email", e.target.value)}
+          onBlur={() => handleBlur("email")}
         />
       </FormField>
 
       <FormField
-        label={
-          <>
-            <span>Mobile Number</span> <Required />
-          </>
-        }
+        label={<><span>Mobile Number</span> <Required /></>}
         htmlFor='mobile'
-        hasError={mobileTouched && !isMobileValid()}
+        hasError={touchedFields.mobile && !isMobileValid()}
         errorMessage={invalidMobileErrorMessage}
       >
         <input
           type='tel'
           id='mobile'
           name='mobile'
-          value={mobile}
+          value={formData.mobile}
           required
           placeholder='10-digit mobile number'
-          onChange={(e) => setMobile(e.target.value)}
-          onBlur={() => setMobileTouched(true)}
+          onChange={(e) => handleChange("mobile", e.target.value)}
+          onBlur={() => handleBlur("mobile")}
         />
       </FormField>
 
       <FormField
-        label={
-          <>
-            <span>Date</span> <Required />
-          </>
-        }
+        label={<><span>Date</span> <Required /></>}
         htmlFor='booking-date'
-        hasError={dateTouched && !isDateValid()}
+        hasError={touchedFields.date && !isDateValid()}
         errorMessage={invalidDateErrorMessage}
       >
         <input
@@ -187,93 +167,73 @@ const BookingForm = ({ availableTimes, dispatchOnDateChange, submitData }) => {
           id='booking-date'
           name='booking-date'
           min={minimumDate}
-          value={date}
+          value={formData.date}
           required
           onChange={handleDateChange}
-          onBlur={() => setDateTouched(true)}
+          onBlur={() => handleBlur("date")}
         />
       </FormField>
 
       <FormField
-        label={
-          <>
-            <span>Time</span> <Required />
-          </>
-        }
+        label={<><span>Time</span> <Required /></>}
         htmlFor='booking-time'
-        hasError={timeTouched && !isTimeValid()}
+        hasError={touchedFields.time && !isTimeValid()}
         errorMessage={invalidTimeErrorMessage}
       >
         <select
           id='booking-time'
           name='booking-time'
-          value={time}
+          value={formData.time}
           required
-          onChange={(e) => setTime(e.target.value)}
-          onBlur={() => setTimeTouched(true)}
+          onChange={(e) => handleChange("time", e.target.value)}
+          onBlur={() => handleBlur("time")}
         >
-          <option value='' disabled>
-            Select a time
-          </option>
-          {availableTimes.map((times) => (
-            <option data-testid='booking-time-option' key={times} value={times}>
-              {times}
+          <option value='' disabled>Select a time</option>
+          {availableTimes.map((time) => (
+            <option key={time} value={time}>
+              {time}
             </option>
           ))}
         </select>
       </FormField>
 
       <FormField
-        label={
-          <>
-            <span>Number of guests</span> <Required />
-          </>
-        }
+        label={<><span>Number of guests</span> <Required /></>}
         htmlFor='booking-number-guests'
-        hasError={guestsTouched && !isNumberOfGuestsValid()}
+        hasError={touchedFields.numberOfGuests && !isNumberOfGuestsValid()}
         errorMessage={invalidNumberOfGuestsErrorMessage}
       >
         <input
           type='number'
           id='booking-number-guests'
           name='booking-number-guests'
-          value={numberOfGuests}
+          value={formData.numberOfGuests}
           min={minimumNumberOfGuests}
           max={maximumNumberOfGuests}
           required
           placeholder='Enter number of guests'
-          onChange={(e) => setNumberGuests(parseInt(e.target.value, 10))}
-          onBlur={() => setGuestsTouched(true)}
+          onChange={(e) => handleChange("numberOfGuests", parseInt(e.target.value, 10))}
+          onBlur={() => handleBlur("numberOfGuests")}
         />
       </FormField>
 
       <FormField
-        label={
-          <>
-            <span>Occasion</span> <Required />
-          </>
-        }
+        label={<><span>Occasion</span> <Required /></>}
         htmlFor='booking-occasion'
-        hasError={occasionTouched && !isOccasionValid()}
+        hasError={touchedFields.occasion && !isOccasionValid()}
         errorMessage={invalidOccasionErrorMessage}
       >
         <select
           id='booking-occasion'
           name='booking-occasion'
-          value={occasion}
+          value={formData.occasion}
           required
-          onChange={(e) => setOccasion(e.target.value)}
-          onBlur={() => setOccasionTouched(true)}
+          onChange={(e) => handleChange("occasion", e.target.value)}
+          onBlur={() => handleBlur("occasion")}
         >
-          <option value='' disabled>
-            Select occasion
-          </option>
+          <option value='' disabled>Select occasion</option>
           {occasions.map((occasion) => (
-            <option
-              data-testid='booking-occasion-option'
-              key={occasion}
-              value={occasion}
-            >
+            <option key={occasion} value={occasion}>
               {occasion}
             </option>
           ))}
@@ -281,7 +241,7 @@ const BookingForm = ({ availableTimes, dispatchOnDateChange, submitData }) => {
       </FormField>
 
       <button
-        className='button-primary'
+        className='btn btn-warning mt-3 button-primary'
         type='submit'
         disabled={!areAllFieldsValid()}
       >

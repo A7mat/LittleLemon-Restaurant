@@ -6,9 +6,13 @@
     background-color: var(--secondary-color-4);
     color: var(--primary-color-dark);
     span {
-        color: var(--secondary-color-3);
+        color: var(--primary-color-light);
         font-weight: bold;
         margin-bottom: 10px;
-        color: var(--primary-color-light);
+        transition: 0.3s;
+    }
+    small:hover {
+        color: var(--secondary-color-2);
+        font-size: 16px;
     }
 }

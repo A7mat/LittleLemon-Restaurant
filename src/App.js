@@ -31,7 +31,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route
-            path="/booking"
+            path="/reservations"
             element={
               <Bookings
                 availableTimes={availableTimes}
