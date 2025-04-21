@@ -1,36 +1,40 @@
 import React from "react";
 import tempPic from "../../assets/Mickey.png"
+import man1 from "../../assets/man1.jpg"
+import man2 from "../../assets/man2.jpg"
+import girl from "../../assets/girl.jpg"
+import girl2 from "../../assets/girl2.jpg"
 import { start } from "@popperjs/core";
 
 const reviewData = [
   {
     id: "1",
-    name: "Micky",
-    midImg: tempPic,
-    rating: 0,
-    review: "Delicious food served in a cozy ambiance, great experience.",
+    name: "Salma",
+    midImg: girl2,
+    rating: 5,
+    review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "2",
-    name: "Superman",
-    midImg: tempPic,
-    rating: 1,
-    review: "Tasty dishes, cozy vibe, highly recommended spot.",
+    name: "Juan",
+    midImg: man2,
+    rating: 4,
+    review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "3",
-    name: "Štefan",
-    midImg: tempPic,
-    rating: 4,
-    review: "Yummy food, friendly staff, definitely worth trying.",
+    name: "Loura",
+    midImg: girl,
+    rating: 5,
+    review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "4",
-    name: "Jake Nackos",
-    midImg: tempPic,
-    rating: 5,
+    name: "Mike",
+    midImg: man1,
+    rating: 3,
     review:
-      "Outstanding cuisine, attentive staff, perfect spot for any occasion.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ];
 
@@ -38,8 +42,8 @@ const Testimonials = () => {
   return (
     <section className="testimonial-section">
       <section className="_max_width">
-        <h1 className="testimonial-heading">Testimonials</h1>
-        <section className="testi-sec-center _max_width
+        <h1 className="testimonial-heading">Customer testimonials!</h1>
+        <section className="testimonial-sec-center _max_width
         d-flex">
           {reviewData.map((item, index) => (
             <Testimonial key={index} {...item} />
@@ -53,21 +57,23 @@ export default Testimonials;
 
 const Testimonial = ({ id, name, midImg, review, rating }) => {
   return (
-    <main className="testi-card" key={id}>
-      <section className="testi-rating-section d-flex">
-        {/* <h5 className="testi-rating-section-h3 d-inline">Rating </h5> */}
+    <main className="testimonial-card" key={id}>
+      <section className="testimonial-rating-section d-flex justify-content-center">
+        {/* <h5 className="testimonial-rating-section-h3 d-inline">Rating </h5> */}
         <Stars rating={rating}/>
       </section>
         <img
           loading="lazy"
           src={midImg}
           alt={name}
-          className="testi-img-el-img"
+          className="testimonial-img"
         />
         <h3>{name}</h3>
-        <p className="testimonial-quote">
-          {review}
-        </p>
+        <blockquote>
+          <p className="testimonial-quote">
+            "{review}"
+          </p>
+        </blockquote>
     </main>
   );
 };

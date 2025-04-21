@@ -10,7 +10,7 @@ const Main = () => {
     <main className="main-container">
       <HeroSection/>
       <HighlightSection/>
-      {/* <TestimonialsSection/> */}
+      <TestimonialsSection/>
       <AboutSection/>
     </main>
   );
