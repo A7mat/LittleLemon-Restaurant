@@ -1,10 +1,8 @@
 import React from "react";
-import tempPic from "../../assets/Mickey.png"
 import man1 from "../../assets/man1.jpg"
 import man2 from "../../assets/man2.jpg"
 import girl from "../../assets/girl.jpg"
 import girl2 from "../../assets/girl2.jpg"
-import { start } from "@popperjs/core";
 
 const reviewData = [
   {
@@ -59,7 +57,6 @@ const Testimonial = ({ id, name, midImg, review, rating }) => {
   return (
     <main className="testimonial-card" key={id}>
       <section className="testimonial-rating-section d-flex justify-content-center">
-        {/* <h5 className="testimonial-rating-section-h3 d-inline">Rating </h5> */}
         <Stars rating={rating}/>
       </section>
         <img

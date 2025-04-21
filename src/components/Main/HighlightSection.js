@@ -2,7 +2,8 @@ import bruchetta from "../../assets/bruchetta.svg";
 import lemonCake from "../../assets/lemon dessert.jpg";
 import salad from "../../assets/greek salad.jpg";
 import { NavLink } from "react-router-dom";
-
+import { faBellConcierge } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const HighlightSection = () => {
     const highlightCards = [
         {
@@ -46,7 +47,7 @@ const HighlightSection = () => {
                   {card.description}
                 </p>
                 <span className="order-delivery" role="button">
-                  Order a delivery
+                  <NavLink className="text-muted text-decoration-none" to="/order">Order a delivery <FontAwesomeIcon icon={faBellConcierge} size="" /></NavLink>
                 </span>
               </div>
             </div>
