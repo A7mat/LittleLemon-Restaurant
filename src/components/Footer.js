@@ -10,7 +10,7 @@ export default function Footer() {
           <span>Doormat Navigation</span>
           <small role="button">Home</small>
           <small role="button">About</small>
-          <small role="button">menu</small>
+          <small role="button">Menu</small>
           <small role="button">Reservations</small>
           <small role="button">Order Online</small>
           <small role="button">Login</small>
@@ -18,8 +18,8 @@ export default function Footer() {
         <div className="column d-flex flex-column">
           <span>Doormat Navigation</span>
           <small role="button">Adress</small>
-          <small role="button">phone number</small>
-          <small role="button">email</small>
+          <small role="button">Phone number</small>
+          <small role="button">Email</small>
         </div>
         {/* <div className="test"></div> */}
       </div>

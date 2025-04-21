@@ -1,6 +1,7 @@
 import bruchetta from "../../assets/bruchetta.svg";
 import lemonCake from "../../assets/lemon dessert.jpg";
 import salad from "../../assets/greek salad.jpg";
+import { NavLink } from "react-router-dom";
 
 const HighlightSection = () => {
     const highlightCards = [
@@ -29,7 +30,7 @@ const HighlightSection = () => {
         <div className="highlights-header d-flex justify-content-between">
           <h1>This week's specials!</h1>
           <span className="align-self-center">
-            <button className="btn btn-warning">Online Menu</button>
+            <button className="btn btn-warning"><NavLink className="text-muted text-decoration-none" to="/order">Online Menu</NavLink></button>
           </span>
         </div>
         <div className="cards d-flex flex-wrap justify-content-around g-2">

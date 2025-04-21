@@ -1,7 +1,7 @@
 @import './global.scss';
 
 .main-container {
-    padding-bottom: 80px;
+    // padding-bottom: 80px;
 }
 
 /* HERO SECTION */
@@ -24,7 +24,7 @@
     max-width: 60ch; /* Wraps after ~30 characters */
     overflow-wrap: break-word;
 }
-.booking-btn {
+.booking-btn, .order-btn {
     a {
         text-decoration: none;
         color: inherit;
@@ -120,120 +120,73 @@
 .testimonial-section {
     width: 100%;
     background-color: var(--primary-color-dark);
-    margin-bottom: 10rem;
-    padding: 4.5rem 0;
+    padding: 1.5rem 0;
     font-family: var(--font-primary);
   }
   .testimonial-heading {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
+    padding: 1.2rem 1.5rem 1rem;
     font-weight: 500;
-    text-align: center;
+    text-align: start;
     font-family: 'Markazi Text' !important;
     color: var(--primary-color-light);
   }
-  .testi-sec-center {
+  .testimonial-sec-center {
     // padding: 7rem 0 9rem;
-    padding: 60px 0;
+    padding: 1.5rem 0;
     gap: 2rem;
   }
   
-  .testi-card {
-    width: 20.5rem;
-    padding: 1.2rem 1.5rem 1rem;
+  .testimonial-card {
+    color: #495e57;
+    grid-column: auto;
+    grid-row: 2;
+    min-height: 22.75rem;
+    height: 8rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    background-color: #ffffffce;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.301);
+    height: 100%;
+    padding: 1rem;
+    background-color: #ffffff;
     border-radius: 1rem;
-    transition: 0.3s;
-    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 15px rgba(244, 206, 20, 0.5);
       &:hover {
         background-color: #fff;
-        transform: scale(1.07);
+        transform: scale(1.03);
         z-index: 5;
       }
   }
   
-  .testi-img-el-img {
-    display: block;
-    margin: 0 auto;
-    width: 100px;
-    height: 100px;
+  .testimonial-img {
+    width: 8rem;
+    height: 8rem;
     object-fit: cover;
-    border-radius: 100px;
+    margin: 0 auto 0.5rem auto;
+    border-radius: 50%;
   }
   
-  .testi-img-caption {
-    margin: 1rem 0 0.5rem;
+  .testimonial-card h3 {
+    margin: 0 auto 0 auto;
+    color: var(--secondary-color-4);
+    font-size: 26px;
+  }
+
+  .testimonial-quote {
+    margin: 1rem auto 0 auto;
+    font-size: 16px;
   }
   
-  .testi-img-caption-h3 {
-    font-size: 2rem;
-    font-weight: 500;
-    text-align: center;
-  }
-  
-  .testi-text-content {
-    margin: 1rem 0;
-  }
-  
-  .testi-text-content-h3 {
-    font-size: 1.6rem;
-    color: #000000b2;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-  }
-  
-  .testi-text-content-blockquote {
-    font-size: 1.6rem;
-    line-height: 1.6;
-    line-height: 1.65;
-    letter-spacing: 0.6px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-  }
-  
-  .testi-rating-section {
+  .testimonial-rating-section {
     // width: 100%;
     gap: 0.2rem;
     margin: 5px 0;
   }
-
-  .testimonial-quote {
-    font-style: italic;
-    position: relative;
-    padding: 1rem 1.5rem;
-    color: #444;
-    line-height: 1.6;
-  }
-  
-  .testimonial-quote::before,
-  .testimonial-quote::after {
-    content: '"';
-    font-size: 2rem;
-    position: absolute;
-    color: #ccc;
-    font-family: serif;
-  }
-  
-  .testimonial-quote::before {
-    top: 0;
-    left: 0;
-  }
-  
-  .testimonial-quote::after {
-    bottom: 0;
-    right: 0;
-  }
   
 /* ABOUT */
 .about-section {
-    min-height: 46.8rem;
-    margin: 10rem auto;
+    min-height: 39rem;
+    padding-top: 50px;
+    padding-bottom: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
@@ -241,21 +194,25 @@
   
   .about-text-content {
     width: 94%;
-    display: grid;
-    grid-template-rows: 1fr 2fr;
+    padding-top: 20px;
+    header {
+      margin-bottom: 60px;
+    }
   }
   
+  .about-text-content-header-h1 {
+    font-family: 'Markazi Text' !important;
+    color: var(--primary-color-light);
+  }
+
   .about-text-content-header-h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 500;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif,
-      "Arial Narrow", Arial, sans-serif;
   }
   
   .about-text-content-p {
     // font-size: 2rem;
     font-weight: 500;
-    line-height: 3.2rem;
     line-height: 2;
     word-spacing: 0.7rem;
     color: rgba(0, 0, 0, 0.6);
@@ -267,7 +224,7 @@
   
   .about-image-content {
     position: relative;
-    height: 100%;
+    // height: 100%;
   }
   
   .about-image-img {
@@ -275,19 +232,14 @@
     object-fit: cover;
     width: 272px;
     height: 338px;
-    /* max-width: 272px;
-    max-height: 338px;
-    width: 55%;
-    height: 65%; */
-    /* aspect-ratio: 2/1; */
   }
   
   .about-fig1 {
-    top: 100px;
+    top: 25px;
     right: 0;
   }
   
   .about-fig2 {
-    bottom: 100px;
+    bottom: 0;
     left: 0;
   }
