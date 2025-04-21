@@ -1,15 +1,23 @@
+import { HashLink } from 'react-router-hash-link';
 import logo from '../assets/Logo.svg';
-import NavLink from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
 
-  const navItems = ['home', 'about', 'menu', 'reservations', 'order online', 'login']
+  const navItems = [
+    { title: 'Home', navigation: '/' },
+    { title: 'About', navigation: '/#about' },
+    { title: 'Menu', navigation: '/menu' },
+    { title: 'Reservations', navigation: '/reservations' },
+    { title: 'Order Online', navigation: '/order' },
+    { title: 'Login', navigation: '/login' },
+  ];
 
   return (
     <header className="d-flex w-100 bg-light">
       <nav className="navbar navbar-expand-md navbar-light _max_width">
         <div className="container-fluid">
-          <img src={logo} alt="logo" height="50px"/>
+          <NavLink to="/"><img src={logo} alt="logo" height="50px"/></NavLink>
           {/* <a className="navbar-brand" href="#">Navbar</a> */}
           <div>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +28,11 @@ function Header() {
               {navItems.map((e, index) => (
                     <li className='nav-item' key={index}>
                         {/* switch to NavLinks */}
-                      <a href="" className='nav-link'>{e.toUpperCase()}</a>
+                        { e.title === 'About' ? 
+                        <HashLink to={e.navigation} className='nav-link'>{e.title}</HashLink>
+                        :
+                        <NavLink to={e.navigation} className='nav-link'>{e.title}</NavLink>
+                      }
                     </li>
                   ))}
               </ul>

@@ -5,6 +5,7 @@ import Bookings from './pages/bookings/index.js';
 import ConfirmedBooking from './pages/bookings/ConfirmedBooking.js';
 import { useEffect, useState } from 'react';
 import './styles/App.scss';
+import PageNotReady from './pages/PageNotReady.js';
 
 function App() {
   const [availableTimes, setAvailableTimes] = useState([]);
@@ -40,10 +41,20 @@ function App() {
             }
           />
           <Route
+            path="/menu"
+            element={ <PageNotReady/> }
+          />
+          <Route
+            path="/order"
+            element={ <PageNotReady/> }
+          />
+          <Route
+            path="/login"
+            element={ <PageNotReady/> }
+          />
+          <Route
             path="/confirmed-booking"
-            element={
-              <ConfirmedBooking/>
-            }
+            element={ <ConfirmedBooking/> }
           />
         </Routes>
       </Layout>

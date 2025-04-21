@@ -5,7 +5,7 @@ import restPic2 from "../../assets/restaurant chef B.jpg"
 
 const About = () => {
   return (
-    <section className="about-section _max_width">
+    <section className="about-section _max_width" id="about">
       <section className="about-text-content _max_width" >
         <header>
           <h1 className="about-text-content-header-h1">Little Lemon</h1>
