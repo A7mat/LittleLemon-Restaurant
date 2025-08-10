@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Little-Lemon-Restaurant/static/css/main.aa0fbdb7.css",
+    "main.js": "/Little-Lemon-Restaurant/static/js/main.949aa77d.js",
+    "static/media/bruchetta.svg": "/Little-Lemon-Restaurant/static/media/bruchetta.29ea078fea3d3120ed22402e901b5bbc.svg",
+    "static/media/restaurant chef B.jpg": "/Little-Lemon-Restaurant/static/media/restaurant chef B.4b4c2d26b514db32e8fc.jpg",
+    "static/media/greek salad.jpg": "/Little-Lemon-Restaurant/static/media/greek salad.bed423a1fab5b210e347.jpg",
+    "static/media/restauranfood.jpg": "/Little-Lemon-Restaurant/static/media/restauranfood.3e48b2a0986d552ec7da.jpg",
+    "static/media/man2.jpg": "/Little-Lemon-Restaurant/static/media/man2.848964bac84787bb706c.jpg",
+    "static/media/restaurant.jpg": "/Little-Lemon-Restaurant/static/media/restaurant.324d0f99bdf19400a0f7.jpg",
+    "static/media/Logo.svg": "/Little-Lemon-Restaurant/static/media/Logo.6c132dfefa69396bba43f72aa595e62f.svg",
+    "static/media/footer_Logo.png": "/Little-Lemon-Restaurant/static/media/footer_Logo.a44b4a88a18b5797268f.png",
+    "static/media/girl.jpg": "/Little-Lemon-Restaurant/static/media/girl.b6c1e1108b5c79648d14.jpg",
+    "static/media/man1.jpg": "/Little-Lemon-Restaurant/static/media/man1.f0f0c88d754c2dcd9e0b.jpg",
+    "static/media/girl2.jpg": "/Little-Lemon-Restaurant/static/media/girl2.15e4c019e11befe37832.jpg",
+    "index.html": "/Little-Lemon-Restaurant/index.html",
+    "main.aa0fbdb7.css.map": "/Little-Lemon-Restaurant/static/css/main.aa0fbdb7.css.map",
+    "main.949aa77d.js.map": "/Little-Lemon-Restaurant/static/js/main.949aa77d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa0fbdb7.css",
+    "static/js/main.949aa77d.js"
+  ]
+}
