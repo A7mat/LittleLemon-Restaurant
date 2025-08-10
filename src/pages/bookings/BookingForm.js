@@ -150,7 +150,7 @@ const BookingForm = ({ availableTimes, dispatchOnDateChange, submitData }) => {
           name='mobile'
           value={formData.mobile}
           required
-          placeholder='10-digit mobile number'
+          placeholder='12-digit mobile number'
           onChange={(e) => handleChange("mobile", e.target.value)}
           onBlur={() => handleBlur("mobile")}
         />
