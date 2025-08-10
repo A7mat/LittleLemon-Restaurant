@@ -3,7 +3,7 @@
 A modern, responsive **React.js** web application for booking table reservations at **Little Lemon Restaurant**.  
 Built with a focus on usability, accessibility, and clean UI design, this project reimagines the restaurant's reservation system to deliver a smoother customer experience.
 
-🔗 **Live Demo:** [View on GitHub Pages](https://a7mat.github.io/Little-Lemon-Restaurant/)
+<!-- 🔗 **Live Demo:** [View on GitHub Pages](https://a7mat.github.io/Little-Lemon-Restaurant/) -->
 
 ![React App (2)](https://github.com/user-attachments/assets/8550214e-f77f-4216-89f1-42dcb1b52215)
 
