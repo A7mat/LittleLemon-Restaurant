@@ -8,7 +8,7 @@ The Little Lemon team received negative feedback regarding their table reservati
 
 This project demonstrates the culmination of the skills and technologies I’ve learned throughout the program, including:
 
-- Responsive design
+- Responsive design 
 - React.js and component-based architecture
 - React Router for navigation
 - Form handling and validation
