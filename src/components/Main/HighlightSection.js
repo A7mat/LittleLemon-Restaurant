@@ -15,7 +15,7 @@ const HighlightSection = () => {
         {
           img: bruchetta,
           title: 'Bruchetta',
-          price: '5.99',
+          price: '4.99',
           description: 'Our Bruchetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.'
         },
         {
