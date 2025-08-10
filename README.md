@@ -4,6 +4,8 @@ This project is the Capstone for my Front-End Development course, built around a
 ## 🔧 Project Overview
 The Little Lemon team received negative feedback regarding their table reservation feature — users found it confusing, outdated, and difficult to use. My task was to redesign and develop a responsive, modern web application that improves the user experience for reserving a table.
 
+![React App (2)](https://github.com/user-attachments/assets/8550214e-f77f-4216-89f1-42dcb1b52215)
+
 This project demonstrates the culmination of the skills and technologies I’ve learned throughout the program, including:
 
 - Responsive design
@@ -12,6 +14,7 @@ This project demonstrates the culmination of the skills and technologies I’ve 
 - Form handling and validation
 - Accessibility best practices
 - UI/UX principles for clarity and usability
+
 
 ## 💡 Objective
 Create a user-friendly interface that makes it simple and intuitive for customers to book a reservation, no matter what device they’re using. The result is a fully functional front-end app with a clean UI and improved usability.
