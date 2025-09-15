@@ -52,7 +52,7 @@ The application demonstrates key front-end development skills including:
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/your-username/little-lemon-frontend.git
+git clone https://github.com/A7mat/LittleLemon-Restaurant.git
 cd little-lemon-frontend
 npm install
 ```
